@@ -29,6 +29,13 @@
 
 <script type="text/javascript">
 
+$(document).ready(function() {
+	$("#pledge").click(function(e) {
+		$("#testbox").lightbox_me();
+		e.preventDefault();
+});
+});
+
 $(function() {
 $('#toggle1').click(function() {
     $('.toggle1').slideToggle("slow");
@@ -49,12 +56,7 @@ $('#pledge').click(function() {
 });
 */
 
-$(document).ready(function() {
-	$("#pledge").click(function(e) {
-    $("#testbox").lightbox_me();
-    e.preventDefault();
-});
-});
+
 
 /* $(document).ready(function() {
 $("#petition").validate({

@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="">
+	<title>Texas Rising - Building Our Power</title>
+
+	<link href="css/bootstrap.css" rel="stylesheet">
+
+	<link href="css/main.css" rel="stylesheet">
+
+	<!--[if lt IE 9]>
+	  <script src="js/html5shiv.js"></script>
+	  <script src="js/respond.min.js"></script>
+	<![endif]-->
+
+	<link rel="shortcut icon" href="images/favicon.ico">
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="js/pace.js"></script>
+<script src="js/lightbox_me.js"></script>
+<!--
+	<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.3/jquery.mobile.min.css" />
+<script src="http://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.3/jquery.mobile.min.js"></script>
+<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.0/themes/smoothness/jquery-ui.css" />
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.0/jquery-ui.min.js"></script>
+<script src="js/simple-expand.min.js"></script> -->
+<script type="text/javascript">
+
+$(function() {
+$('#toggle1').click(function() {
+    $('.toggle1').slideToggle("slow");
+    return false;
+});
+});
+
+/*$(function() {
+$('#pledge').click(function() {
+		$('#petitionform').lightbox_me({
+				centered: true,
+				onLoad: function() {
+						$('#petitionform').find('input:first').focus()
+						}
+				});
+		e.preventDefault();
+});
+});
+*/
+
+$(document).ready(function() {
+	$("#pledge").click(function(e) {
+    $("#testbox").lightbox_me();
+    e.preventDefault();
+});
+});
+
+/* $(document).ready(function() {
+$("#petition").validate({
+rules: {
+	cons_zip_code: {
+	required: true,
+	digits: true,
+        minlength: 5,
+        maxlength: 5,
+},
+    cons_email: {
+      required: true,
+      email: true,
+    },
+cons_first_name: "required",
+cons_last_name: "required"
+  } ,// rules
+messages: {
+cons_first_name: "Please enter your first name.",
+cons_last_name: "Please enter your last name.",
+cons_email: "Please enter a valid email address.",
+cons_zip_code: "Please enter a five digit zip code.",
+},
+  submitHandler: function(form) {
+    $('form').ajaxSubmit(function(event) {
+      $('#loading-gif').ajaxStart(function(){
+        $(this).html('<img src="../images/content/pagebuilder/ajax-loading.gif" />');
+        $(this).fadeIn();
+      });
+	submitSurvey();
+  $('#loading-gif').ajaxComplete(function(){
+    $(this).fadeOut();
+  });
+}); // ajax submit
+}, //submithandler
+  }); // validate
+}); //doc ready
+
+function submitSurvey() {
+	var first_name = $('#cons_first_name').val();
+	var last_name = $('#cons_last_name').val();
+	var email = $('#cons_email').val();
+	var zip = $('#cons_zip_code').val();
+	var cons_info_component = $('#cons_info_component').val();
+        var birth_year = $('select').val();
+
+
+
+
+
+$.ajax({
+  type: 'POST',
+  url: '[[T7:https://secure2.convio.net/txfree/site/CRSurveyAPI]]',
+  dataType: 'json',
+  data: {
+                        'method': 'submitSurvey',
+			'api_key': 'f74kbb8kl',
+			'v': '1.0',
+			'response_format': 'json',
+			'auth': '[[S86:true]]',
+			'cons_id': '[[S1:cons_id]]',
+			'cons_info_component': zip,
+			'survey_id': '4001',
+                        'cons_first_name': first_name,
+			'cons_last_name': last_name,
+			'cons_email': email,
+			'cons_zip_code': zip,
+                        'question_5380': birth_year,
+    },
+ success: function(data) {
+			$('#petitionform').html("<i class='fa fa-2x fa-check-square-o'></i><h4>Thank you for signing the petition.</h4><p>Can you share this <a href='https://www.facebook.com/sharer/sharer.php?u=http://www.tfn.org/site/PageNavigator/Social_Studies_campaign.html' target='_blank'>on Facebook</a> and <a href='https://twitter.com/home?status=I%27m%20asking%20the%20TX%20Board%20of%20Education%20to%20stop%20rewriting%20history.%20Will%20you%20join%20in?%20%23dontdeleteit%20www.tfn.org/history' target='_blank'>on Twitter</a>?</p>");
+		},
+error: function( xhr, tStatus, err ) {
+            if( xhr.status === 403 ) {
+              $('#petitionform').html("<h4>Thanks again!</h4><p>You've already signed the petition. But you can still help by sharing this page <a href='https://www.facebook.com/sharer/sharer.php?u=http://www.tfn.org/site/PageNavigator/Social_Studies_campaign.html' target='_blank'>on Facebook</a> and <a href='https://twitter.com/home?status=I%27m%20asking%20the%20TX%20Board%20of%20Education%20to%20stop%20rewriting%20history.%20Will%20you%20join%20in?%20%23dontdeleteit%20www.tfn.org/history' target='_blank'>on Twitter</a>.</p><p>If you believe you received this message in error, <a href='mailto:tfn@tfn.org.'>contact us</a>.</p>");
+            } else {
+            }
+          },
+});
+}; */
+
+
+</script>
+<style type="text/css">
+#petitionform, #sign_up, #testbox {
+	display: none;
+}
+input[type=submit] {
+    background: url(../images/submit.png);
+    border: 0;
+    display: block;
+    width: 155px;
+    height: 35px;
+    margin-top: 3px;
+}
+
+input, select {
+  background: white;
+  border: 0px;
+  height: 30px;
+  width: 100%;
+  font-size: 14px;
+}
+
+select {
+width: 40% !important;
+}
+
+</style>
+
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300,600' rel='stylesheet' type='text/css'>
+</head>
+
+<body>
+	<div class="preloader"></div>
+
+    <! -- ******************** MASTHEAD SECTION ******************** -->
+	<main id="top" class="masthead" role="main">
+		<div class="container">
+			<div class="logo"> <a href="index.html#"><img src="images/TX-RISING_logo-450.png" width="300" alt="logo"></a>
+			</div>
+
+			<h1>A new generation is <strong>rising in Texas.</strong></h1>
+
+			<div class="row">
+				<div class="col-md-6 col-sm-12 col-md-offset-3 subscribe">
+					<form class="form-horizontal" role="form" action="subscribe.php" id="subscribeForm" method="POST">
+						<div class="form-group">
+							<div class="col-md-7 col-sm-6 col-sm-offset-1 col-md-offset-0">
+								<input class="form-control input-lg" name="email" type="email" id="address" placeholder="Enter your email" data-validate="validate(required, email)" required="required">
+							</div>
+							<div class="col-md-5 col-sm-4">
+								<button type="submit" class="btn btn-success btn-lg">GET UPDATES</button>
+							</div>
+						</div>
+					</form>
+					<span id="result" class="alertMsg"></span> </div>
+				</div>
+<button id="pledge" class="btn btn-success btn-lg">Sign the pledge</button>
+				<a href="index.html#explore" class="scrollto">
+				<p>SCROLL DOWN TO EXPLORE</p>
+				<p class="scrollto--arrow"><img src="images/scroll_down.png" alt="scroll down arrow"></p>
+				</a>
+		</div><! --/container -->
+	</main><! --/main -->
+
+<! -- ******************** PLEDGE FORM FOR LIGHTBOX ******************** -->
+<div id="testbox">
+	<h3>WHOA</h3>
+</div>
+
+   <div id="sign_up">
+                <h3 id="see_id" class="sprited" >Can I see some ID?</h3>
+                <span>Please sign in using the form below</span>
+                <div id="sign_up_form">
+                    <label><strong>Username:</strong> <input class="sprited"/></label>
+                    <label><strong>Password:</strong> <input class="sprited"/></label>
+                    <div id="actions">
+                        <a class="close form_button sprited" id="cancel" href="#">Cancel</a>
+                        <a class="form_button sprited" id="log_in" href="#">Sign in</a>
+                    </div>
+                </div>
+                <h3 id="left_out" class="sprited">Feeling left out?</h3>
+                <span>Don't be sad, just <a href="#">click here</a> to sign up!</span>
+                <a id="close_x" class="close sprited" href="#">close</a>
+            </div>
+
+
+<div id="petitionform">
+           <form action="" id="petition" name="petition" class="text-center center-block" accept-charset="utf-8">
+           <input type="hidden" name="cons_info_component" id="cons_info_component" value="t" />
+
+           <input type="text" name="cons_first_name" id="cons_first_name"  maxlength="50" value="First name" onFocus="if(this.value == 'First name') {this.value = '';}" style="margin-bottom: 3px;" class="center-block" />
+
+           <input type="text" name="cons_last_name" id="cons_last_name"  maxlength="50" value="Last name" onFocus="if(this.value == 'Last name') {this.value = '';}" style="margin-bottom: 3px;" class="center-block" />
+
+           <input type="text" name="cons_email" id="cons_email"  maxlength="255" value="Email" onFocus="if(this.value == 'Email') {this.value = '';}" onBlur="if (this.value == '') {this.value = 'Email';}" style="margin-bottom: 3px;" class="center-block" />
+
+<input type="text" name="cons_zip_code" id="cons_zip_code" size="20" maxlength="255" value="Zip" onFocus="if(this.value == 'Zip') {this.value = '';}" onBlur="if (this.value == '') {this.value = 'Zip';}" style="margin-bottom: 3px;" class="center-block" />
+
+<select class="center-block" style="height: 25px;" name="birth_year" id="birth_year" form="petition">
+<option value="0000" >Year of birth (optional)</option>
+<option value="2001" >2001</option>
+<option value="2000" >2000</option>
+<option value="1999" >1999</option>
+<option value="1998" >1998</option>
+<option value="1997" >1997</option>
+<option value="1996" >1996</option>
+<option value="1995" >1995</option>
+<option value="1994" >1994</option>
+<option value="1993" >1993</option>
+<option value="1992" >1992</option>
+<option value="1991" >1991</option>
+<option value="1990" >1990</option>
+<option value="1989" >1989</option>
+<option value="1988" >1988</option>
+<option value="1987" >1987</option>
+<option value="1986" >1986</option>
+<option value="1985" >1985</option>
+<option value="1984" >1984</option>
+<option value="1983" >1983</option>
+<option value="1982" >1982</option>
+<option value="1981" >1981</option>
+<option value="1980" >1980</option>
+<option value="1979" >1979</option>
+<option value="1978" >1978</option>
+<option value="1977" >1977</option>
+<option value="1976" >1976</option>
+<option value="1975" >1975</option>
+<option value="1974" >1974</option>
+<option value="1973" >1973</option>
+<option value="1972" >1972</option>
+<option value="1971" >1971</option>
+<option value="1970" >1970</option>
+<option value="1969" >1969</option>
+<option value="1968" >1968</option>
+<option value="1967" >1967</option>
+<option value="1966" >1966</option>
+<option value="1965" >1965</option>
+<option value="1964" >1964</option>
+<option value="1963" >1963</option>
+<option value="1962" >1962</option>
+<option value="1961" >1961</option>
+<option value="1960" >1960</option>
+<option value="1959" >1959</option>
+<option value="1958" >1958</option>
+<option value="1957" >1957</option>
+<option value="1956" >1956</option>
+<option value="1955" >1955</option>
+<option value="1954" >1954</option>
+<option value="1953" >1953</option>
+<option value="1952" >1952</option>
+<option value="1951" >1951</option>
+<option value="1950" >1950</option>
+<option value="1949" >1949</option>
+<option value="1948" >1948</option>
+<option value="1947" >1947</option>
+<option value="1946" >1946</option>
+<option value="1945" >1945</option>
+<option value="1944" >1944</option>
+<option value="1943" >1943</option>
+<option value="1942" >1942</option>
+<option value="1941" >1941</option>
+<option value="1940" >1940</option>
+<option value="1939" >1939</option>
+<option value="1938" >1938</option>
+<option value="1937" >1937</option>
+<option value="1936" >1936</option>
+<option value="1935" >1935</option>
+<option value="1934" >1934</option>
+<option value="1933" >1933</option>
+<option value="1932" >1932</option>
+<option value="1931" >1931</option>
+<option value="1930" >1930</option>
+<option value="1929" >1929</option>
+<option value="1928" >1928</option>
+<option value="1927" >1927</option>
+<option value="1926" >1926</option>
+<option value="1925" >1925</option>
+<option value="1924" >1924</option>
+<option value="1923" >1923</option>
+<option value="1922" >1922</option>
+<option value="1921" >1921</option>
+<option value="1920" >1920</option>
+<option value="1919" >1919</option>
+<option value="1918" >1918</option>
+<option value="1917" >1917</option>
+<option value="1916" >1916</option>
+<option value="1915" >1915</option>
+<option value="1914" >1914</option>
+<option value="1913" >1913</option>
+<option value="1912" >1912</option>
+<option value="1911" >1911</option>
+<option value="1910" >1910</option>
+</select>
+                     <span class="hidden"><input type="text" name="denySubmit" id="denySubmit" value="" alt="This field is used to prevent form submission by scripts." />&nbsp;Please leave this field empty</span>
+           <input type="hidden" name="SURVEY_ID" id="SURVEY_ID" value="4001" />
+           <br />
+           <input type="submit" name="" id="submitButton" value="" class="button center-block newsletter_signup_button img-responsive" /><br />
+         </form>
+</div>
+
+<! -- ******************** /PLEDGE FORM FOR LIGHTBOX ******************** -->
+
+    <! -- ******************** FEATURES SECTION ******************** -->
+	<div class="container" id="explore">
+
+		<div class="section-title">
+			<h2>Student Spotlight</h2>
+			<h4>What Texas Rising students are up to around the state.</h4>
+		</div>
+
+		<section class="row heroimg breath">
+			<div class="col-md-6 text-center">
+				<h3>James Carneiro's story</h3>
+				<img src="images/james-carneiro.png" alt="James Carneiro's story" >
+			</div>
+      <div class="col-md-6 student-feature">
+					<p>The state of Texas isn’t exactly known for its level of political engagement.</p>
+
+It ranks last in civic engagement and many people don’t even know who their state representative is. The conventional wisdom says most people will stay at home while a tiny though highly powerful bloc of right-wing voters will make it to the polls in November. Not surprisingly, this has created a state where birth control is non-existent in health textbooks, the separation of church and state is questioned in the social studies curriculum and close-minded representatives try to pass bills defunding gender and sexuality centers on college campuses. And the above nonsense doesn’t even come close to the far-right backlash on reproductive rights. If we continue on this path, family planning centers could become only a memory.
+</p><p>
+This is why progressives need to fight back. In response to the right-wing onslaught, the Texas Freedom Network Education Fund has unveiled the Texas Rising campaign, a blueprint for capturing the energy and amplifying the voices of a rising young Texas electorate. The statistics make the importance of young voters crystal clear: 24 percent of eligible Texas voters are millennials, between the ages of 18 and 29.
+</p><p>
+But this is the part that will blow your mind: If every millennial voted, they could determine every policy initiative discussed in the Texas Legislature. Better yet, they could elect a new generation of forward-thinking people to public office. And just like that, a better Texas is born.
+
+</p>
+<a href="#" id="toggle1" style="font-size: 13pt; color: red;">Read the rest...</a>
+
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+
+					<div style="display: none;" class="toggle1">
+					        <p>
+        But this untapped power is useless unless it can be properly organized. The Texas Freedom Network Education Fund (TFNEF) is making this happen by educating young Texans on the issues impacting them and their community, providing them with the tools needed to participate in our democracy, and developing the emerging generation of diverse, progressive community leaders. TFNEF has partnered with Wellstone Action to make grassroots organizers out of young progressives through a series of trainings across the state. There have been five trainings so far, each one at a public university. The curriculum gives students the skills they’ll need to build voter engagement campaigns on their respective campuses. It teaches them how to tailor their message to young people, how to register this demographic to vote and how to get them to show up at the polls in November.
+</p><p>
+Texas Rising’s organizing strategy is derived from the Wellstone Triangle — a theory of organizing that TFN strongly believes in. The Wellstone Triangle uses a holistic approach to organizing that engages young leaders throughout the entire political process. From grassroots community organizing to public policy advocacy to electoral politics, this model covers it all.
+</p><p>
+Because the Texas Legislature meets every other year, Texas Rising has an annual task. When the Lege is not in session, we’ll focus on registering and getting young voters out to the polls. When the legislators are gathered in Austin, we’ll lobby our representatives and senators. Throughout this cycle, we’ll build a grassroots base to support the work for the long haul.
+</p><p>
+To those who are skeptical about young people being invested in politics, our experience has shown otherwise. During Texas Rising’s spring 2014 trainings, more than 100 students participated and drafted campaign plans on the spot. When these students returned to campus, they set up tables in the quad and registered entire classrooms and dorms of their peers. They mobilized their friends around the happenings at the State Board of Education (SBOE), organized to help pass the Houston Equal Rights Ordinance (HERO), and worked to change the cultural stigma on abortion.
+</p><p>
+This summer, starting July 31, more than 40 student leaders from all over the state will gather in Austin for the Texas Rising Summer Institute, a four day training dedicated to issue education and Get Out The Vote (GOTV) organizing. They’ll show how student action is the solution to the state’s problems. Working with the media, online organizing, recruitment and retention will be explained. Each participant will help draft a GOTV plan for their campus. An entire day will be spent on the 1 in 3 campaign, an effort to end the stigma surrounding abortion through the power of story telling.
+</p><p>
+The work doesn’t end when the conference does. Students will continue to register voters and ensure they’re equipped with the correct form of voter ID. Then we’ll shift gears in October to concentrate on driving voter turnout.
+</p><p>
+If you’re still nervous about pulling this off, you don’t have to worry. TFN has been organizing young people for more than eight years in a state politically hostile to the values of us young progressives. With a track record like that, you know you’re in good hands.
+</p><p>
+TFN believes in young people. If it didn’t, a plan like this wouldn’t be attempted. When someone becomes engaged in the political process at a young age, he or she will stick with it – likely for a lifetime. This is especially important when considering the state’s rapidly changing demographics. Texas is getting younger and more diverse. If we can harness the power of this new generation, we can create a healthier, kinder and more tolerant state.
+</p><p>
+From El Paso to Austin to the Rio Grande Valley, the young folks are rising in the Lone Star State.
+        </p>
+			</div>
+        </div>
+      </div>
+		</section><! --/section -->
+
+		<div class="section-title">
+			<h2>What is <span style="color: #FEC325;">Texas Rising</span>?</h2>
+			<h4>Always detail some important features.</h4>
+		</div>
+
+		<section class="row features">
+			<div class="col-sm-6 col-md-3">
+				<div class="thumbnail">
+					<img src="images/service_01.png" alt="analytics-icon">
+					<div class="caption">
+						<h3>More Diverse</h3>
+						<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+					</div>
+				</div><! --/thumbnail -->
+			</div><! --/col-sm-6-->
+
+			<div class="col-sm-6 col-md-3">
+				<div class="thumbnail">
+					<img src="images/service_02.png" alt="analytics-icon">
+					<div class="caption">
+						<h3>More Inclusive</h3>
+						<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+					</div>
+				</div><! --/thumbnail -->
+			</div><! --/col-sm-6-->
+
+			<div class="col-sm-6 col-md-3">
+				<div class="thumbnail">
+					<img src="images/service_03.png" alt="analytics-icon">
+					<div class="caption">
+						<h3>More Determined</h3>
+						<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+					</div>
+				</div><! --/thumbnail -->
+			</div><! --/col-sm-6-->
+
+			<div class="col-sm-6 col-md-3">
+				<div class="thumbnail">
+					<img src="images/service_04.png" alt="analytics-icon">
+					<div class="caption">
+						<h3>Important Feature 4</h3>
+						<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+					</div>
+				</div><! --/thumbnail -->
+			</div><! --/col-sm-6-->
+		</section><! --/section -->
+
+
+	    <! -- ******************** CLIENTS SECTION ******************** -->
+		<div class="section-title">
+			<h2>Some of our clients</h2>
+			<h4>We work with different kind of brands</h4>
+		</div>
+
+		<section class="row clientlogo breath">
+			<div class="col-md-12 text-center">
+				<img src="images/client-logos.png" alt="client-logos">
+			</div>
+		</section><! --/section -->
+
+	</div><! --/container -->
+
+
+	    <! -- ******************** TESTIMONIALS SECTION ******************** -->
+		<div class="highlight testimonials">
+			<div class="container">
+				<div class="section-title">
+					<h2>What our customers said</h2>
+					<h4>Don't take our word. See our testimonials </h4>
+				</div>
+
+				<section class="row breath">
+					<div class="col-md-6">
+						<div class="testblock">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. </div>
+						<div class="clientblock">
+							<img src="images/customer-img-1.jpg" alt=".">
+							<p><strong>John Doe</strong> <br>
+								Founder of <a href="index.html#">Blacktie.co</a>
+							</p>
+						</div>
+					</div><! --/col-md-6 -->
+
+					<div class="col-md-6">
+						<div class="testblock">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. </div>
+						<div class="clientblock">
+							<img src="images/customer-img-2.jpg" alt=".">
+							<p><strong>Richard Sommer</strong> <br>
+								CEO of <a href="index.html#">Blacktie.co</a>
+							</p>
+						</div>
+					</div><! --/col-md-6 -->
+				</section><! --/section -->
+
+			</div><! --/container -->
+		</div><! --/highlight Testimonials -->
+
+
+	    <! -- ******************** PRICING LIST ******************** -->
+		<div class="container">
+
+			<div class="section-title">
+				<h2>Honest pricing. No surprises.</h2>
+				<h4>No contract. No risk. No credit card required. </h4>
+			</div>
+			<section class="row breath planpricing">
+
+				<div class="col-md-4">
+					<div class="pricing color1">
+						<div class="planname">Personal</div>
+						<div class="price"> <span class="curr">$</span>14<span class="per">/MO</span></div>
+						<div class="billing">Billed Annually</div>
+					</div><! --/pricing -->
+				</div><! --/col-md-4-->
+
+				<div class="col-md-4">
+					<div class="pricing color2">
+						<div class="planname">Agency</div>
+						<div class="price"> <span class="curr">$</span>49<span class="per">/MO</span></div>
+						<div class="billing">Billed Annually</div>
+					</div><! --/pricing -->
+				</div><! --/col-md-4-->
+
+				<div class="col-md-4">
+					<div class="pricing color3">
+						<div class="planname">Enterprise</div>
+						<div class="price"> <span class="curr">$</span>99<span class="per">/MO</span></div>
+						<div class="billing">Billed Annually</div>
+					</div><! --/pricing -->
+				</div><! --/col-md-4-->
+			</section><!-- /section planpricing -->
+
+
+	    <! -- ******************** FAQ ******************** -->
+
+		<div class="section-title">
+			<h5>Frequently Asked Questions</h5>
+		</div>
+
+		<section class="row faq breath">
+			<div class="col-md-6">
+				<h6>How does the free trial work?</h6>
+				<p>Our 10 day trial is 100% free and does not require credit card information to start. If at the end of your trial you would like to upgrade, great. If not, you can cancel your account altogether, or let us mark it as inactive for you to come back to later.</p>
+				<h6>Can I switch plans later?</h6>
+				<p>Absolutely. You can switch between our paid plans, or cancel your account altogether, whenever you like. We will adjust any payments accordingly.</p>
+			</div><! --/col-md-6 -->
+
+			<div class="col-md-6">
+				<h6>Do I need to choose a plan now?</h6>
+				<p>No. You get the full featured, unlimited version of our service completely free for 10 days. Once you're ready to upgrade, you may choose a plan which suits your needs.</p>
+				<h6>What payment types do you accept?</h6>
+				<p>We accept payments from MasterCard, Visa, Visa Debit and American Express. We do not accept PayPal. Remember, you do not need to supply card details to start your free trial.</p>
+			</div><! --/col-md-6 -->
+		</section><! --/section faq -->
+
+	</div><! --/container -->
+
+	    <! -- ******************** FOOTER ******************** -->
+		<main class="footercta" role="main">
+			<div class="container">
+				<h1>The Most Simple & <strong>Powerful Way</strong> <br>
+					to <strong>launch</strong> your product</h1>
+
+				<div class="row">
+					<div class="col-md-12 breath text-center">
+						<a href="index.html#top" class="btn btn-success btn-lg gototop">GET EARLY ACCESS</a>
+					</div>
+				</div>
+			</div><! --/container -->
+		</main><! --/main -->
+
+		<div class="container">
+			<section class="row breath">
+				<div class="col-md-12 footerlinks">
+					<p>&copy; 2014 BlackTie.co. All Rights Reserved</p>
+				</div>
+			</section><! --/section -->
+		</div><! --/container -->
+
+
+
+
+<script src="js/jquery.js"></script>
+<script src="js/bootstrap.js"></script>
+<script src="js/easing.js"></script>
+<script src="js/nicescroll.js"></script>
+
+
+<script>
+
+
+ $(function() {
+    $('.scrollto, .gototop').bind('click',function(event){
+		 var $anchor = $(this);
+		 $('html, body').stop().animate({
+         scrollTop: $($anchor.attr('href')).offset().top
+          }, 1500,'easeInOutExpo');
+     event.preventDefault();
+      });
+  });
+
+
+</script>
+
+</body>
+</html>

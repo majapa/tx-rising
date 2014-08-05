@@ -18,8 +18,12 @@
 
 	<link rel="shortcut icon" href="images/favicon.ico">
 <script src="js/pace.js"></script>
+<script src="js/bootstrap.js"></script>
+<script src="js/easing.js"></script>
+<script src="js/nicescroll.js"></script>
 <script src="http://code.jquery.com/jquery-1.4.2.min.js" type="text/javascript" charset="utf-8"></script>
-	<script src="js/lightbox_me.js" type="text/javascript" charset="utf-8"></script><!--
+	<script src="js/lightbox_me.js" type="text/javascript" charset="utf-8"></script>
+	<!--
 	<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.3/jquery.mobile.min.css" />
 <script src="http://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.3/jquery.mobile.min.js"></script>
 <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.0/themes/smoothness/jquery-ui.css" />
@@ -50,6 +54,19 @@ $('#pledge').click(function() {
 	$("#pledge").click(function(e) {
     $("#testbox").lightbox_me();
 });
+
+  $(function() {
+            function launch() {
+                 $('#sign_up').lightbox_me({centered: true, onLoad: function() { $('#sign_up').find('input:first').focus()}});
+            }
+
+            $('#try-1').click(function(e) {
+                $("#sign_up").lightbox_me({centered: true, preventScroll: true, onLoad: function() {
+					$("#sign_up").find("input:first").focus();
+				}});
+
+                e.preventDefault();
+            });
 
 /* $(document).ready(function() {
 $("#petition").validate({
@@ -569,10 +586,7 @@ From El Paso to Austin to the Rio Grande Valley, the young folks are rising in t
 
 
 
-<script src="js/jquery.js"></script>
-<script src="js/bootstrap.js"></script>
-<script src="js/easing.js"></script>
-<script src="js/nicescroll.js"></script>
+
 
 
 <script>
